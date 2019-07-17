@@ -106,3 +106,79 @@
     width: 50%;
     font-size: 75%;
 }
+
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .item {
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    position: relative;
+  }
+  
+  button {
+    border: 1px solid white;
+    background: inherit;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    transition: background 0.5s ease;
+  }
+  
+  button:hover {
+    background: red;
+    color: white;
+    font-weight: normal;
+  }
+  
+  button:hover i {
+    color: white;
+  }
+  
+  i {
+    margin-left: 20px;
+  }
+  
+  .arrow1 {
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+  }
+
+  @keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+.form-control
+{
+display: initial;
+width: 32%;
+height: 34px;
+padding: 6px 12px;
+margin-left: 4%;
+font-size: 14px;
+line-height: 1.42857143;
+color: white;
+background-color: inherit;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-left: 3%;
+    margin-right: 6%;
+}
+  
+.react-tel-input
+{
+    display: initial;
+}

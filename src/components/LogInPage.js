@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-// import MuiPhoneInput from 'react-phone-input-2';
+import ReactPhoneInput from "react-phone-input-2";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -44,6 +44,7 @@ class LogInPage extends Component {
             {
                 email: '',
                 password: '',
+                phone: '',
             }
     }
 
@@ -68,9 +69,13 @@ class LogInPage extends Component {
                             <input type="text" placeholder="Password" class="text-line" />
                         </div>
                         <div style={{ "margin": "4%" }}>
-                            <Button type="password" variant="contained" color="primary" onClick={() => this.onSignIn}>
-                                Sign In
-                            </Button>
+                            <div class="wrapper">
+                                <div class="item">
+                                    <button>Sign In
+                                <i class="fa fa-long-arrow-right arrow1" ></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,13 +90,18 @@ class LogInPage extends Component {
                             <i class="glyphicon glyphicon-bold"></i>
                             <input type="text" placeholder="Last Name" class="text-line" />
                         </div>
-                        <div>
+                        <div style={{"display":"block","padding":"3%"}}>
                             <i class="glyphicon glyphicon-phone"></i>
-                            {/* <MuiPhoneInput
-                                defaultCountry='it'
-                                regions={'europe'}
-                            /> */}
-                            <input type="text" placeholder="Mobile Number" class="text-line" />
+                            <ReactPhoneInput
+                                inputExtraProps={{
+                                    name: "phone",
+                                    required: true,
+                                    autoFocus: true
+                                }}
+                                defaultCountry={"in"}
+                                value={this.state.phone}
+                                onChange={this.handleOnChange   }
+                            />
                         </div>
                         <div>
                             <i class="glyphicon glyphicon-envelope"></i>
@@ -105,9 +115,13 @@ class LogInPage extends Component {
                             <i class="glyphicon glyphicon-lock"></i>
                             <input type="password" placeholder="Confirm Password" class="text-line" />
                         </div>
-                        <Button type="submit" variant="contained" color="primary" >
-                            Sign Up
-                            </Button>
+                        <div class="wrapper">
+                            <div class="item">
+                                <button>Sign Up
+                                <i class="fa fa-long-arrow-right arrow1" ></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
